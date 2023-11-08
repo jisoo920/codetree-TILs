@@ -19,13 +19,10 @@ for idx in range(n):
         continue
 
     distance = 0
-    for j in range(1, n):
+    for j in range(1, n-1):
         if j == idx: 
             right = j + 1
-
-        if right >= n:
-            continue
-        #print("left, right: ", left, right)
+            
         distance += get_distance(coord[left][0], coord[left][1], coord[right][0], coord[right][1])
 
         left = right
