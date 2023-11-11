@@ -30,11 +30,14 @@ def check_and_sum(a, b, c):
 
 answer = -sys.maxsize
 for i in range(n-2):
-    for j in range(+1, n-1):
+    for j in range(i+1, n-1):
         for k in range(j+1, n):
             #print(i, j, k)
             #rint("Wow", num_list[i], num_list[j], num_list[k])
-            #num_sum = check_and_sum(num_list[i], num_list[j], num_list[k])
+#            num_sum = check_and_sum(num_list[i], num_list[j], num_list[k])
+#            if num_sum != -1:
+#                print("Wow", num_list[i], num_list[j], num_list[k])
+#                print(num_sum)
             answer = max(answer, check_and_sum(num_list[i], num_list[j], num_list[k]))
             
 print(answer)
