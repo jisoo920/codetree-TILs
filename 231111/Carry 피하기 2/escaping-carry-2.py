@@ -8,11 +8,9 @@ def is_carry(a, b, c):
 
 def check_and_sum(a, b, c):
     real_a, real_b, real_c = a, b, c
-    #print("a, b, c: ", real_a, real_b, real_c)
 
     while True:
-        check_a, check_b, check_c = a%10, b%10, c%10,
-        #print("F", check_a, check_b, check_c)          
+        check_a, check_b, check_c = a%10, b%10, c%10,      
 
         if is_carry(check_a, check_b, check_c): # carry 발생, 종료
             return -1
@@ -22,22 +20,13 @@ def check_and_sum(a, b, c):
         c = (c-check_c)//10
 
         if a == 0 and b == 0 and c == 0:
-            #print(f'{check_a} + {check_b} +{check_c} = {check_a + check_b + check_c}')
             return real_a + real_b + real_c  
-
-        #print("S", a, b, c)
 
 
 answer = -sys.maxsize
 for i in range(n-2):
     for j in range(i+1, n-1):
         for k in range(j+1, n):
-            #print(i, j, k)
-            #rint("Wow", num_list[i], num_list[j], num_list[k])
-#            num_sum = check_and_sum(num_list[i], num_list[j], num_list[k])
-#            if num_sum != -1:
-#                print("Wow", num_list[i], num_list[j], num_list[k])
-#                print(num_sum)
             answer = max(answer, check_and_sum(num_list[i], num_list[j], num_list[k]))
             
 print(answer)
