@@ -5,13 +5,9 @@ girds = [ list(map(int, input().split())) for _ in range(MAX)]
 black = [1, 1, 1, 1, 1]
 white = [2, 2, 2, 2, 2]
 
-def is_in_range(r, c):
-    return 0 <= r <= MAX-1 and 0 <= c <= MAX-1
 
 # 가로
-def check_hor(r, c): 
-    #print("가로, r, c:", girds[r][c:c+5], r, c)
-    
+def check_hor(r, c):     
     if girds[r][c:c+5] == black or girds[r][c:c+5] == white:
         return True
     else:
@@ -21,13 +17,7 @@ def check_hor(r, c):
 def check_ver(r, c):
     num_list = []
     for n_r in range(r, r+5):
-        """
-        if not is_in_range(n_r, c):
-            return False
-        """
         num_list.append(girds[n_r][c])
-    
-    #print(num_list)
     
     if num_list == black or num_list == white:
         return True
@@ -39,10 +29,6 @@ def check_ver(r, c):
 def check_dia(r, c):    
     num_list = []
     for n in range(5):
-        """
-        if not is_in_range(r+n, c+n):
-            return False
-        """
         num_list.append(girds[r+n][c+n])
 
     if num_list == black or num_list == white:
@@ -55,10 +41,6 @@ def check_dia(r, c):
 def check_re_dia(r, c):    
     num_list = []
     for n in range(5):
-        """
-        if not is_in_range(r+n, c-n):
-            return False
-        """
         num_list.append(girds[r+n][c-n])
     
     if num_list == black or num_list == white:
@@ -105,12 +87,7 @@ for row in range(MAX):
             breaker = True
             winner = girds[n_row][n_col]
             break
-        
-        #break
-        
-        
-        
-        
+                
 
 
 #print("n_row, n_col, how:", n_row, n_col, how)
