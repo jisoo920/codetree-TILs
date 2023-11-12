@@ -21,8 +21,10 @@ def check_hor(r, c):
 def check_ver(r, c):
     num_list = []
     for n_r in range(r, r+5):
+        """
         if not is_in_range(n_r, c):
             return False
+        """
         num_list.append(girds[n_r][c])
     
     #print(num_list)
@@ -37,8 +39,10 @@ def check_ver(r, c):
 def check_dia(r, c):    
     num_list = []
     for n in range(5):
+        """
         if not is_in_range(r+n, c+n):
             return False
+        """
         num_list.append(girds[r+n][c+n])
 
     if num_list == black or num_list == white:
@@ -51,8 +55,10 @@ def check_dia(r, c):
 def check_re_dia(r, c):    
     num_list = []
     for n in range(5):
+        """
         if not is_in_range(r+n, c-n):
             return False
+        """
         num_list.append(girds[r+n][c-n])
     
     if num_list == black or num_list == white:
