@@ -16,13 +16,8 @@ for row in range(n):
 
         if str_grids[row][col] != 'L':
             continue
-        
-        
-        #print("row, col: ", row, col)
-        #print("str: ", str_grids[row][col])
-
+    
         for dr, dc in zip(drs, dcs):
-            #print("dr, dc: ", dr, dc)
             n_row, n_col = row, col
             e_cnt = 0
 
@@ -31,10 +26,8 @@ for row in range(n):
                 n_c = n_col + dc
 
                 if not is_in_range(n_r, n_c):
-                    #print("out r c: ", n_r, n_c)
                     break
 
-                #print(str_grids[n_r][n_c], end = " ")
                 if str_grids[n_r][n_c] == 'E':
                     e_cnt += 1
                 
