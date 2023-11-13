@@ -7,7 +7,7 @@ min_gap = sys.maxsize
 total_sum = sum(num_list)
 
 for a in range(N):
-    for b in range(a, N):
+    for b in range(a+1, N):
         num_sum = total_sum - (num_list[a] + num_list[b])
 
         #print(num_list[a], num_list[b], num_sum)
