@@ -1,3 +1,5 @@
+import sys
+
 developers = list(map(int, input().split()))
 
 sum_de = sum(developers)
@@ -12,12 +14,11 @@ def get_diff(i, j, k):
 len_de = len(developers)
 
 
-answer = 99999
+answer = sys.maxsize
 
 for i in range(len_de):
     for j in range(i+1, len_de):
         for k in range(j+1, len_de):
-            
             answer = min(answer, get_diff(i, j, k))
 
 print(answer)
