@@ -1,14 +1,14 @@
 x, y = map(int, input().split())
 
+def get_sum(n):
+    if n < 10:
+        return n
+
+    return get_sum(n // 10) + (n%10)
+
 answer = 0
 
 for n in range(x, y+1):
-    str_n = str(n)
-    #print(str_n)
-    sum_num = 0
-    for s_n in str_n:
-        sum_num += int(s_n)
-    
-    answer = max(answer, sum_num)
+    answer = max(answer, get_sum(n))
 
 print(answer)
