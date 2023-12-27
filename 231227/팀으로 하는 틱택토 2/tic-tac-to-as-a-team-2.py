@@ -10,23 +10,28 @@ answer = 0
 def check_win(grid):
     # 가로
     for r in range(3):
-        if 0 not in [grid[r][0], grid[r][1], grid[r][2]]:
-            return True, set([grid[r][0], grid[r][1], grid[r][2]])
+        num_list = [grid[r][0], grid[r][1], grid[r][2]]
+        if (0 not in num_list) and len(set(num_list)) == 2 :
+            return True
 
     # 세로
     for c in range(3):
-        if 0 not in [grid[0][c], grid[1][c], grid[2][c]]:
-            return True, set([grid[0][c], grid[1][c], grid[2][c]])
+        #print("세로", [grid[0][c], grid[1][c], grid[2][c]])
+        num_list = [grid[0][c], grid[1][c], grid[2][c]]
+        if (0 not in num_list) and len(set(num_list)) == 2 :
+            return True
 
     # 대각선
-    if 0 not in [grid[0][0], grid[1][1], grid[2][2]]:
-        return True, set([grid[0][0], grid[1][1], grid[2][2]])
+    num_list = [grid[0][0], grid[1][1], grid[2][2]]
+    if (0 not in num_list) and len(set(num_list)) == 2 :
+        return True
 
     # 역대각선
-    if 0 not in [grid[0][2], grid[1][1], grid[2][0]]:
-        return True, set([grid[0][2], grid[1][1], grid[2][0]])
+    num_list = [grid[0][2], grid[1][1], grid[2][0]]
+    if (0 not in num_list) and len(set(num_list)) == 2 :
+        return True
 
-    return False, set([0])
+    return False
 
 for i in range(1, MAX-1):
     for j in range(i+1, MAX):
@@ -40,10 +45,12 @@ for i in range(1, MAX-1):
                 if nums[r][c] == j:
                     grid[r][c] = j
         
-        checked, num_set = check_win(grid)
-        if checked:
-            if len(num_set) == 2:
-                answer += 1
+#        checked, num_set = 
+#        print(i, j)
+#        print(checked, num_set)
+        if check_win(grid):
+            answer += 1
+
                 
 
 print(answer)
