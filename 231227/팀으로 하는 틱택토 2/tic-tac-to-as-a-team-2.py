@@ -16,7 +16,6 @@ def check_win(grid):
 
     # 세로
     for c in range(3):
-        #print("세로", [grid[0][c], grid[1][c], grid[2][c]])
         num_list = [grid[0][c], grid[1][c], grid[2][c]]
         if (0 not in num_list) and len(set(num_list)) == 2 :
             return True
@@ -44,10 +43,7 @@ for i in range(1, MAX-1):
 
                 if nums[r][c] == j:
                     grid[r][c] = j
-        
-#        checked, num_set = 
-#        print(i, j)
-#        print(checked, num_set)
+    
         if check_win(grid):
             answer += 1
 
