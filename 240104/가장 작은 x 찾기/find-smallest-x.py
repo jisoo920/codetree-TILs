@@ -1,7 +1,8 @@
 n = int(input())
 num_ranges = [list(map(int, input().split())) for _ in range(n)]
+MAX = 10000
 
-for num in range(num_ranges[0][0], num_ranges[0][1]+1):
+for num in range(1, MAX+1):
     target = num *2
     check = True
 
