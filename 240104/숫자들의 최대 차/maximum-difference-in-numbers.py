@@ -14,7 +14,7 @@ def count_len(min_n, max_n):
 
 ans = 0
 
-for i in range(MAX+1):
+for i in range(1, MAX+1):
     max_num = i + k
 
     ans = max(ans, count_len(i, max_num))
