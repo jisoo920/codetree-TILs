@@ -14,7 +14,7 @@ for unique in unique_b:
                 cnt += 1
             idx = i
 
-    if cnt > 0:
+    if cnt > 1:
         answer.append((unique, cnt))
 
     #print(answer)
