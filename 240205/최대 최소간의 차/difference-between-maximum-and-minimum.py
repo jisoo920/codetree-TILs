@@ -21,15 +21,12 @@ def get_cost(min_num, max_num):
         elif num > max_num:
             cost += abs(num - max_num)
         
-    #print("cost: ", cost)
     return cost
     
         
 for i in range(MIN, MAX+1):
     max_num = i+k
-    #print("min_num, max_num: ",i,  max_num)
     answer = min(answer, get_cost(i, max_num))
 
-#    print(answer)
 
 print(answer)
