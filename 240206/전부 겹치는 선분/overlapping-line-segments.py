@@ -5,16 +5,14 @@ points.sort()
 
 #print(points)
 
-intersect = True
+intersect = 0
 
 for idx in range(n-1):
-    #print(points[idx][1],  points[idx+1][0])
-    if points[idx][1] < points[idx+1][0]:
-        intersect = False
-        break
+    if points[idx][1] >= points[idx+1][0]:
+        intersect += 1
 
 
-if intersect:
+if intersect == n:
     print("Yes")
 else:
     print("No")
