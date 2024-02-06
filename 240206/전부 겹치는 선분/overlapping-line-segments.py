@@ -8,9 +8,10 @@ points.sort()
 intersect = True
 
 for idx in range(n-1):
-    if points[idx][1] < points[idx][0]:
+    #print(points[idx][1],  points[idx+1][0])
+    if points[idx][1] < points[idx+1][0]:
         intersect = False
-    break
+        break
 
 
 if intersect:
