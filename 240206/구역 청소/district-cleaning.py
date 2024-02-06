@@ -2,7 +2,7 @@ a, b = map(int, input().split())
 c, d = map(int, input().split())
 
 # 겹치지 않는 경우 
-if b < c or d < a:
+if b <= c or d <= a:
     answer = (b-a) + (d-c)
 
 # 일부가 겹치는 경우
