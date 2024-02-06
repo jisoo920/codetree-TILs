@@ -10,9 +10,9 @@ elif c < b < d or a < d < b:
     answer = max(b, d) - min(a, c)
 
 # 포함되어 겹치는 경우
-elif c < a and b < d:
+elif c <= a and b <= d:
     answer = d - c
-elif a < c and d < b:
+elif a <= c and d <= b:
     answer = b - a
 
 
