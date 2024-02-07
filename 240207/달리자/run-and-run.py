@@ -6,12 +6,10 @@ answer = 0
 
 for idx in range(n-1):
     diff = a_arr[idx] - b_arr[idx]
-    answer += diff
+    if diff > 0:
+        answer += diff
 
-    a_arr[idx] -= diff
-    a_arr[idx+1] += diff
-
-    #print("a_arr: ", a_arr)
-    #print("idx, diff, answer: ", idx, diff, answer)
+        a_arr[idx] -= diff
+        a_arr[idx+1] += diff
 
 print(answer)
