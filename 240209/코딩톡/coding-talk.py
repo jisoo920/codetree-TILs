@@ -9,7 +9,7 @@ for idx in range(1, m+1):
     if (idx == p) and message == '0':
         exit()
 
-    if idx > p:
+    if idx >= p:
         reader.append(programer)
 
 unreader = list(set(alpha) - set(reader))
